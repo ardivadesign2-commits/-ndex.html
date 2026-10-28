@@ -1,0 +1,434 @@
+```html
+<!DOCTYPE html>
+<html lang="tr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARDIVA HOME | Konfor ve Modern Yaşam</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter & Playfair Display -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        ardiva: {
+                            gold: '#c5a059',
+                            darkGold: '#a37f3e',
+                            dark: '#1a1a1a',
+                            cream: '#fcfaf7',
+                            softGray: '#f4f2ee',
+                            accent: '#2c3531'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .product-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .product-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+    </style>
+</head>
+<body class="bg-ardiva-cream text-stone-800 font-sans antialiased selection:bg-ardiva-gold selection:text-white">
+
+    <!-- Header & Navigation -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-stone-200/60 transition-all">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#" class="flex flex-col">
+                        <span class="font-serif text-2xl font-bold tracking-wider text-stone-900 uppercase">ARDIVA HOME</span>
+                        <span class="text-[9px] tracking-[0.25em] text-ardiva-gold uppercase font-semibold">Konfor ve Modern Yaşam</span>
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex space-x-8 items-center font-medium text-sm tracking-wide text-stone-600">
+                    <a href="#anasayfa" class="hover:text-ardiva-gold transition-colors">Ana Sayfa</a>
+                    <a href="#katalog" class="hover:text-ardiva-gold transition-colors">2026 Koleksiyonu</a>
+                    <a href="#hakkimizda" class="hover:text-ardiva-gold transition-colors">Hakkımızda</a>
+                    <a href="#iletisim" class="hover:text-ardiva-gold transition-colors">İletişim</a>
+                </nav>
+
+                <!-- WhatsApp Quick Action Button -->
+                <div class="hidden sm:flex items-center space-x-4">
+                    <a href="https://wa.me/905312924350?text=Merhaba,%20Ardiva%20Home%20ürünleri%20hakkında%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" class="bg-emerald-600 hover:bg-emerald-700 text-white px-5 py-2.5 rounded-full text-xs font-semibold tracking-wider uppercase shadow-sm transition-all flex items-center gap-2 hover:shadow-md">
+                        <i class="fa-brands fa-whatsapp text-base"></i>
+                        <span>Hızlı İletişim</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" type="button" class="text-stone-700 hover:text-ardiva-gold p-2" aria-label="Menüyü Aç">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-stone-200 px-4 pt-2 pb-6 space-y-3">
+            <a href="#anasayfa" class="block py-2 text-stone-700 font-medium hover:text-ardiva-gold">Ana Sayfa</a>
+            <a href="#katalog" class="block py-2 text-stone-700 font-medium hover:text-ardiva-gold">2026 Koleksiyonu</a>
+            <a href="#hakkimizda" class="block py-2 text-stone-700 font-medium hover:text-ardiva-gold">Hakkımızda</a>
+            <a href="#iletisim" class="block py-2 text-stone-700 font-medium hover:text-ardiva-gold">İletişim</a>
+            <a href="https://wa.me/905312924350?text=Merhaba,%20Ardiva%20Home%20ürünleri%20hakkında%20bilgi%20almak%20istiyorum." target="_blank" class="w-full mt-2 bg-emerald-600 text-white py-3 rounded-lg text-center font-medium flex items-center justify-center gap-2">
+                <i class="fa-brands fa-whatsapp text-lg"></i> WhatsApp İle Ulaşın
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="anasayfa" class="relative bg-stone-900 text-white min-h-[85vh] flex items-center justify-center overflow-hidden">
+        <!-- Background Overlay Image -->
+        <div class="absolute inset-0 z-0 opacity-40 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=1600&auto=format&fit=crop');"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-stone-900 via-stone-900/60 to-transparent z-0"></div>
+
+        <div class="relative z-10 max-w-5xl mx-auto px-4 text-center space-y-8 py-20">
+            <div class="inline-block px-4 py-1.5 rounded-full border border-ardiva-gold/50 bg-ardiva-gold/10 backdrop-blur-sm">
+                <span class="text-xs uppercase tracking-[0.3em] font-semibold text-ardiva-gold">NEW SERIES / 2026</span>
+            </div>
+            
+            <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-tight">
+                ARDIVA HOME
+                <span class="block text-xl sm:text-3xl font-sans font-light tracking-widest text-stone-300 mt-3">KONFOR VE MODERN YAŞAM</span>
+            </h1>
+
+            <p class="max-w-2xl mx-auto text-stone-300 text-base sm:text-lg font-light leading-relaxed">
+                Yalın hatlar, ergonomik yapılar ve yüksek kaliteli dokular. Yaşam alanlarınıza sofistike bir atmosfer kazandıran özel tasarım koltuk takımlarımızı keşfedin.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+                <a href="#katalog" class="w-full sm:w-auto px-8 py-4 rounded-full bg-ardiva-gold hover:bg-ardiva-darkGold text-stone-900 font-semibold text-sm uppercase tracking-wider transition-all duration-300 shadow-lg hover:shadow-xl">
+                    Koleksiyonu İncele
+                </a>
+                <a href="https://wa.me/905312924350?text=Merhaba,%20katalog%20hakkında%20detaylı%20bilgi%20almak%20istiyorum." target="_blank" class="w-full sm:w-auto px-8 py-4 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/30 text-white font-semibold text-sm uppercase tracking-wider transition-all duration-300 flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-emerald-400 text-lg"></i>
+                    WhatsApp Sipariş
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Catalog Section -->
+    <section id="katalog" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+            <span class="text-ardiva-gold text-xs font-bold tracking-[0.2em] uppercase">2026 Özel Koleksiyonu</span>
+            <h2 class="font-serif text-3xl sm:text-4xl font-bold text-stone-900">Modern & Elegance Koltuk Takımları</h2>
+            <div class="w-16 h-0.5 bg-ardiva-gold mx-auto mt-4"></div>
+            <p class="text-stone-600 font-light">
+                İnegöl mobilya kalitesini estetik detaylarla harmanladık. Her bir modelimiz rahatlığı ve zarafeti ön planda tutarak tasarlandı.
+            </p>
+        </div>
+
+        <!-- Product Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
+
+            <!-- Item 1: RIO SOFA SET -->
+            <div class="product-card bg-white rounded-2xl overflow-hidden border border-stone-200/80 flex flex-col">
+                <div class="relative h-64 overflow-hidden bg-stone-100">
+                    <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=800&auto=format&fit=crop" alt="RIO Koltuk Takımı" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                    <span class="absolute top-4 left-4 bg-stone-900/80 backdrop-blur-md text-white px-3 py-1 rounded-full text-xs font-semibold tracking-wider">
+                        230 x 90 cm
+                    </span>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <h3 class="font-serif text-2xl font-bold text-stone-900">RIO SOFA SET</h3>
+                            <span class="text-xs font-medium text-ardiva-gold bg-ardiva-cream px-2.5 py-1 rounded border border-ardiva-gold/30">Ergonomik</span>
+                        </div>
+                        <p class="text-stone-600 text-sm leading-relaxed mt-3">
+                            RIO Koltuk Takımı, modern tasarım anlayışını konforla buluşturan özel bir koleksiyondur. Yalın ve güçlü hatlarıyla yaşam alanlarınıza sofistike bir atmosfer kazandırır.
+                        </p>
+                        <ul class="mt-4 space-y-1.5 text-xs text-stone-500">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-ardiva-gold"></i> Yumuşak dokulu kumaş seçenekleri</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-ardiva-gold"></i> Estetik dikiş detayları & zarif ayaklar</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-ardiva-gold"></i> Geniş oturum & destekleyici sırt yapısı</li>
+                        </ul>
+                    </div>
+                    <div class="pt-4 border-t border-stone-100">
+                        <a href="https://wa.me/905312924350?text=Merhaba,%20RIO%20SOFA%20SET%20(230x90)%20modeli%20hakkında%20fiyat%20ve%20detaylı%20bilgi%20almak%20istiyorum." target="_blank" class="w-full bg-stone-900 hover:bg-emerald-600 text-white font-medium text-xs tracking-wider uppercase py-3 px-4 rounded-xl transition-colors duration-300 flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-base text-emerald-400"></i>
+                            <span>Sipariş & Bilgi Al</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 2: GALAXY SOFA SET -->
+            <div class="product-card bg-white rounded-2xl overflow-hidden border border-stone-200/80 flex flex-col">
+                <div class="relative h-64 overflow-hidden bg-stone-100">
+                    <img src="https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?q=80&w=800&auto=format&fit=crop" alt="GALAXY Koltuk Takımı" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                    <span class="absolute top-4 left-4 bg-stone-900/80 backdrop-blur-md text-white px-3 py-1 rounded-full text-xs font-semibold tracking-wider">
+                        220 x 90 cm
+                    </span>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <h3 class="font-serif text-2xl font-bold text-stone-900">GALAXY SOFA SET</h3>
+                            <span class="text-xs font-medium text-ardiva-gold bg-ardiva-cream px-2.5 py-1 rounded border border-ardiva-gold/30">Minimalist</span>
+                        </div>
+                        <p class="text-stone-600 text-sm leading-relaxed mt-3">
+                            Akıcı hatlara sahip tasarımı mekâna ferahlık katarken; konfor odaklı oturum yapısı gün boyu rahat bir kullanım sağlar. Minimal ayak tasarımı modern karakterini öne çıkarır.
+                        </p>
+                        <ul class="mt-4 space-y-1.5 text-xs text-stone-500">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-ardiva-gold"></i> Akıcı hatlar & ferah tasarım</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-ardiva-gold"></i> Özenle işlenmiş dikiş detayları</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-ardiva-gold"></i> Şıklık ve fonksiyonellik bir arada</li>
+                        </ul>
+                    </div>
+                    <div class="pt-4 border-t border-stone-100">
+                        <a href="https://wa.me/905312924350?text=Merhaba,%20GALAXY%20SOFA%20SET%20(220x90)%20modeli%20hakkında%20fiyat%20ve%20detaylı%20bilgi%20almak%20istiyorum." target="_blank" class="w-full bg-stone-900 hover:bg-emerald-600 text-white font-medium text-xs tracking-wider uppercase py-3 px-4 rounded-xl transition-colors duration-300 flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-base text-emerald-400"></i>
+                            <span>Sipariş & Bilgi Al</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 3: OSLO SOFA SET -->
+            <div class="product-card bg-white rounded-2xl overflow-hidden border border-stone-200/80 flex flex-col">
+                <div class="relative h-64 overflow-hidden bg-stone-100">
+                    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=800&auto=format&fit=crop" alt="OSLO Koltuk Takımı" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                    <span class="absolute top-4 left-4 bg-stone-900/80 backdrop-blur-md text-white px-3 py-1 rounded-full text-xs font-semibold tracking-wider">
+                        240 x 90 cm
+                    </span>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <h3 class="font-serif text-2xl font-bold text-stone-900">OSLO SOFA SET</h3>
+                            <span class="text-xs font-medium text-ardiva-gold bg-ardiva-cream px-2.5 py-1 rounded border border-ardiva-gold/30">Çağdaş</span>
+                        </div>
+                        <p class="text-stone-600 text-sm leading-relaxed mt-3">
+                            Modern tasarımın akıcı hatlarını doğal dokularla buluşturan özel bir koleksiyondur. Kıvrımlı kol yapısı ve siyah çerçeve detayı modele çağdaş bir kimlik kazandırır.
+                        </p>
+                        <ul class="mt-4 space-y-1.5 text-xs text-stone-500">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-ardiva-gold"></i> Kıvrımlı kol yapısı & siyah çerçeve</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-ardiva-gold"></i> Soft tonlu dekorasyonlarla kusursuz uyum</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-ardiva-gold"></i> Minimal ama dikkat çekici form</li>
+                        </ul>
+                    </div>
+                    <div class="pt-4 border-t border-stone-100">
+                        <a href="https://wa.me/905312924350?text=Merhaba,%20OSLO%20SOFA%20SET%20(240x90)%20modeli%20hakkında%20fiyat%20ve%20detaylı%20bilgi%20almak%20istiyorum." target="_blank" class="w-full bg-stone-900 hover:bg-emerald-600 text-white font-medium text-xs tracking-wider uppercase py-3 px-4 rounded-xl transition-colors duration-300 flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-base text-emerald-400"></i>
+                            <span>Sipariş & Bilgi Al</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 4: GOLF SOFA SET -->
+            <div class="product-card bg-white rounded-2xl overflow-hidden border border-stone-200/80 flex flex-col">
+                <div class="relative h-64 overflow-hidden bg-stone-100">
+                    <img src="https://images.unsplash.com/photo-1540574163026-643ea20ade25?q=80&w=800&auto=format&fit=crop" alt="GOLF Koltuk Takımı" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                    <span class="absolute top-4 left-4 bg-stone-900/80 backdrop-blur-md text-white px-3 py-1 rounded-full text-xs font-semibold tracking-wider">
+                        230 x 95 cm
+                    </span>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <h3 class="font-serif text-2xl font-bold text-stone-900">GOLF SOFA SET</h3>
+                            <span class="text-xs font-medium text-ardiva-gold bg-ardiva-cream px-2.5 py-1 rounded border border-ardiva-gold/30">İskandinav</span>
+                        </div>
+                        <p class="text-stone-600 text-sm leading-relaxed mt-3">
+                            Modern tasarım anlayışını sıcak ahşap detaylarla buluşturarak yaşam alanlarına doğal ve dengeli bir atmosfer kazandırır.
+                        </p>
+                        <ul class="mt-4 space-y-1.5 text-xs text-stone-500">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-ardiva-gold"></i> Sıcak ahşap detaylar & ayak tasarımı</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-ardiva-gold"></i> Yumuşak formlu kol yapısı</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-ardiva-gold"></i> İskandinav & modern tarza mükemmel uyum</li>
+                        </ul>
+                    </div>
+                    <div class="pt-4 border-t border-stone-100">
+                        <a href="https://wa.me/905312924350?text=Merhaba,%20GOLF%20SOFA%20SET%20(230x95)%20modeli%20hakkında%20fiyat%20ve%20detaylı%20bilgi%20almak%20istiyorum." target="_blank" class="w-full bg-stone-900 hover:bg-emerald-600 text-white font-medium text-xs tracking-wider uppercase py-3 px-4 rounded-xl transition-colors duration-300 flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-base text-emerald-400"></i>
+                            <span>Sipariş & Bilgi Al</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 5: RETRO SOFA SET -->
+            <div class="product-card bg-white rounded-2xl overflow-hidden border border-stone-200/80 flex flex-col md:col-span-2 lg:col-span-1">
+                <div class="relative h-64 overflow-hidden bg-stone-100">
+                    <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=800&auto=format&fit=crop" alt="RETRO Koltuk Takımı" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                    <span class="absolute top-4 left-4 bg-stone-900/80 backdrop-blur-md text-white px-3 py-1 rounded-full text-xs font-semibold tracking-wider">
+                        240 x 90 cm
+                    </span>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <h3 class="font-serif text-2xl font-bold text-stone-900">RETRO SOFA SET</h3>
+                            <span class="text-xs font-medium text-ardiva-gold bg-ardiva-cream px-2.5 py-1 rounded border border-ardiva-gold/30">Zamansız Klasik</span>
+                        </div>
+                        <p class="text-stone-600 text-sm leading-relaxed mt-3">
+                            Geçmişin zarafeti, günümüzün konforu. Klasik tasarım çizgilerini modern detaylarla buluşturarak yaşam alanlarına karakterli bir şıklık kazandırır.
+                        </p>
+                        <ul class="mt-4 space-y-1.5 text-xs text-stone-500">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-ardiva-gold"></i> Dengeli renk kombinasyonu</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-ardiva-gold"></i> Yumuşak hatlar & zamansız tasarım</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-ardiva-gold"></i> Yüksek konforlu geniş oturum alanı</li>
+                        </ul>
+                    </div>
+                    <div class="pt-4 border-t border-stone-100">
+                        <a href="https://wa.me/905312924350?text=Merhaba,%20RETRO%20SOFA%20SET%20(240x90)%20modeli%20hakkında%20fiyat%20ve%20detaylı%20bilgi%20almak%20istiyorum." target="_blank" class="w-full bg-stone-900 hover:bg-emerald-600 text-white font-medium text-xs tracking-wider uppercase py-3 px-4 rounded-xl transition-colors duration-300 flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-base text-emerald-400"></i>
+                            <span>Sipariş & Bilgi Al</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- About Banner Section -->
+    <section id="hakkimizda" class="bg-stone-900 text-white py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6">
+                <span class="text-ardiva-gold text-xs font-bold tracking-[0.2em] uppercase">Ardiva Home Güvencesi</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold leading-tight">Konfor ve Modern Yaşamın Buluşma Noktası</h2>
+                <p class="text-stone-300 leading-relaxed font-light text-sm sm:text-base">
+                    Türkiye'nin mobilya başkenti İnegöl'de bulunan fabrikamızda, yaşam alanlarınız için estetik, konforlu ve dayanıklı mobilyalar üretiyoruz. 2026 koleksiyonumuzda yer alan ürünler ergonomi ve modern zarafeti evlerinize taşıyor.
+                </p>
+                <div class="grid grid-cols-2 gap-6 pt-4 border-t border-stone-800">
+                    <div>
+                        <span class="block text-2xl sm:text-3xl font-bold font-serif text-ardiva-gold">İnegöl</span>
+                        <span class="text-xs text-stone-400 uppercase tracking-wider">Üretim Merkezi</span>
+                    </div>
+                    <div>
+                        <span class="block text-2xl sm:text-3xl font-bold font-serif text-ardiva-gold">2026</span>
+                        <span class="text-xs text-stone-400 uppercase tracking-wider">Yeni Seri Tasarımlar</span>
+                    </div>
+                </div>
+            </div>
+            <div class="relative">
+                <div class="aspect-video sm:aspect-square rounded-2xl overflow-hidden shadow-2xl border border-stone-800">
+                    <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?q=80&w=1000&auto=format&fit=crop" alt="Ardiva Home Üretim & Tasarım" class="w-full h-full object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Map Section -->
+    <section id="iletisim" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+            <span class="text-ardiva-gold text-xs font-bold tracking-[0.2em] uppercase">İletişime Geçin</span>
+            <h2 class="font-serif text-3xl sm:text-4xl font-bold text-stone-900">Fabrika & İletişim Bilgileri</h2>
+            <p class="text-stone-600 text-sm">Sorularınız, toptan/perakende siparişleriniz ve detaylı teklifler için bize ulaşın.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Contact Box 1 -->
+            <div class="bg-white p-8 rounded-2xl border border-stone-200 text-center space-y-4 hover:border-ardiva-gold/50 transition-colors shadow-sm">
+                <div class="w-14 h-14 bg-ardiva-cream rounded-full flex items-center justify-center text-ardiva-gold text-2xl mx-auto">
+                    <i class="fa-solid fa-phone"></i>
+                </div>
+                <h3 class="font-serif text-xl font-bold text-stone-900">Telefon</h3>
+                <p class="text-stone-600 text-sm">Doğrudan arayabilir veya WhatsApp'tan yazabilirsiniz.</p>
+                <div class="pt-2 space-y-1">
+                    <a href="tel:05312924350" class="block font-semibold text-stone-900 hover:text-ardiva-gold transition-colors">0531 292 43 50</a>
+                    <a href="tel:05523663106" class="block font-semibold text-stone-900 hover:text-ardiva-gold transition-colors">0552 366 31 06</a>
+                </div>
+            </div>
+
+            <!-- Contact Box 2 -->
+            <div class="bg-white p-8 rounded-2xl border border-stone-200 text-center space-y-4 hover:border-ardiva-gold/50 transition-colors shadow-sm">
+                <div class="w-14 h-14 bg-ardiva-cream rounded-full flex items-center justify-center text-ardiva-gold text-2xl mx-auto">
+                    <i class="fa-solid fa-envelope"></i>
+                </div>
+                <h3 class="font-serif text-xl font-bold text-stone-900">E-Posta</h3>
+                <p class="text-stone-600 text-sm">Bize e-posta göndererek teklif alabilirsiniz.</p>
+                <div class="pt-2">
+                    <a href="mailto:ardivadesign2@gmail.com" class="font-semibold text-stone-900 hover:text-ardiva-gold transition-colors break-all">ardivadesign2@gmail.com</a>
+                </div>
+            </div>
+
+            <!-- Contact Box 3 -->
+            <div class="bg-white p-8 rounded-2xl border border-stone-200 text-center space-y-4 hover:border-ardiva-gold/50 transition-colors shadow-sm">
+                <div class="w-14 h-14 bg-ardiva-cream rounded-full flex items-center justify-center text-ardiva-gold text-2xl mx-auto">
+                    <i class="fa-solid fa-location-dot"></i>
+                </div>
+                <h3 class="font-serif text-xl font-bold text-stone-900">Fabrika Adresi</h3>
+                <p class="text-stone-600 text-sm leading-relaxed">
+                    Mahmudiye mh. Macit sk. No: 17 <br>
+                    <span class="font-semibold text-stone-900">İnegöl / BURSA</span>
+                </p>
+                <div class="pt-2">
+                    <a href="https://maps.google.com/?q=Mahmudiye+mh.+Macit+sk.+No:+17+Inegol+Bursa" target="_blank" class="inline-flex items-center gap-2 text-xs font-semibold text-ardiva-gold uppercase tracking-wider hover:underline">
+                        <span>Haritada Göster</span> <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-stone-900 text-stone-400 border-t border-stone-800 py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+            <div>
+                <a href="#" class="font-serif text-xl font-bold text-white uppercase tracking-wider">ARDIVA HOME</a>
+                <p class="text-xs text-stone-500 mt-1">Konfor ve Modern Yaşam &copy; 2026 Tüm Hakları Saklıdır.</p>
+            </div>
+            
+            <div class="flex space-x-6 text-sm">
+                <a href="https://wa.me/905312924350" target="_blank" class="hover:text-emerald-400 transition-colors">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                </a>
+                <a href="mailto:ardivadesign2@gmail.com" class="hover:text-white transition-colors">
+                    <i class="fa-solid fa-envelope text-lg"></i>
+                </a>
+                <a href="tel:05312924350" class="hover:text-white transition-colors">
+                    <i class="fa-solid fa-phone text-lg"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Fixed Floating WhatsApp Button -->
+    <a href="https://wa.me/905312924350?text=Merhaba,%20Ardiva%20Home%20ürünleri%20hakkında%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" class="fixed bottom-6 right-6 z-50 bg-emerald-600 hover:bg-emerald-700 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-all duration-300" aria-label="WhatsApp Canlı Destek">
+        <i class="fa-brands fa-whatsapp text-3xl"></i>
+    </a>
+
+    <!-- Mobile Menu Toggle Script -->
+    <script>
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
+```
